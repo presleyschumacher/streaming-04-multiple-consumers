@@ -35,6 +35,8 @@ Explore the RabbitMQ website.
 
 Will it terminate on its own? How do you know? 
 
+_The task does not terminate on its own. If you want to terminate, you need to use CTL + C. If you terminate a worker while it was processing a message, RabbitMQ will requeue the message and deliever the message to another consumer as long as there are other consumers online.
+
 ## Ready for Work
 
 1. Use your emitter_of_tasks to produce more task messages.
@@ -49,6 +51,7 @@ How are tasks distributed?
 Monitor the windows with at least two workers. 
 Which worker gets which tasks?
 
+_By default, RabbitMQ will send each message to the next consumer, in sequence. On average every consumer will get the same              number of messages. This way of distributing messages is called round-robin. In my example, I used 2 consumers and distributed 5 messages. Consumer number 1 got messages 1, 3, and 5. Consumer number 2 got messages 2 and 4._
 
 ## Reference
 
