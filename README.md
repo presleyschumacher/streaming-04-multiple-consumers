@@ -35,7 +35,7 @@ Explore the RabbitMQ website.
 
 Will it terminate on its own? How do you know? 
 
-_The task does not terminate on its own. If you want to terminate, you need to use CTL + C. If you terminate a worker while it was processing a message, RabbitMQ will requeue the message and deliever the message to another consumer as long as there are other consumers online.
+_The task does not terminate on its own. If you want to terminate, you need to use CTL + C. If you terminate a worker while it was processing a message, RabbitMQ will requeue the message and deliever the message to another consumer as long as there are other consumers online._
 
 ## Ready for Work
 
