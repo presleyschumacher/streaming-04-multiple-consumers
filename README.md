@@ -36,8 +36,6 @@ When you run the task emitter, reply y to open it.
   * The ack(nowledgement) is sent back by the consumer to tell RabbitMQ that a message had been     received, processed, and that RabbitMQ can delete it.
   * Acknowledgements are essential for data safety.
 
-
-
 Source: https://www.rabbitmq.com/confirms.html#basics
 
 ## Execute a Consumer / Worker
@@ -62,6 +60,13 @@ Will it terminate on its own? How do you know?
 Which worker gets which tasks? How are tasks distributed? 
   * By default, RabbitMQ will send each message to the next consumer, in sequence. On average every consumer will get the same number of messages. This way of distributing messages is called round-robin. 
   * In my example, I used 2 consumers and distributed 5 messages. Consumer number 1 got messages 1, 3, and 5. Consumer number 2 got messages 2 and 4.
+
+##### Summary of Steps I Took:
+1. Ran new_task.py in Visual Studio Code
+2. Open 3 new terminal windows and run worker.Py
+4. Open a new terminal window and run new_task.py
+6. Continually tell the new_task.py to send new tasks to the workers
+7. Watch as the messages are sent to the worker terminals in sequene
 
 ## Reference
 
