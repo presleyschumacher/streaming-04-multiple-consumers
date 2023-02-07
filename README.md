@@ -32,26 +32,28 @@ When you run the task emitter, reply y to open it.
 
 ## Execute the Producer
 
-- [x] Run emitter_of_tasks.py (say y to monitor RabbitMQ queues)
+- [x] Run new_task.py (say y to monitor RabbitMQ queues)
   * The ack(nowledgement) is sent back by the consumer to tell RabbitMQ that a message had been     received, processed, and that RabbitMQ can delete it.
   * Acknowledgements are essential for data safety.
+
+
 
 Source: https://www.rabbitmq.com/confirms.html#basics
 
 ## Execute a Consumer / Worker
 
-- [x] Run listening_worker.py
+- [x] Run new_task.py
 
 Will it terminate on its own? How do you know? 
   * The task does not terminate on its own. If you want to terminate, you need to use CTL + C. If you terminate a worker while it was processing a message, RabbitMQ will requeue the message and deliever the message to another consumer as long as there are other consumers online.
 
 ## Ready for Work
 
-- [x] Use your emitter_of_tasks to produce more task messages.
+- [x] Use your new_task.py to produce more task messages.
 
 ## Start Another Listening Worker 
 
-- [x] Use your listening_worker.py script to launch a second worker. 
+- [x] Use your worker.py script to launch a second worker. 
 
 - [x] Follow the tutorial. 
 - [x] Add multiple tasks (e.g. First message, Second message, etc.)
