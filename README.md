@@ -59,20 +59,24 @@ Will it terminate on its own? How do you know?
 
 Which worker gets which tasks? How are tasks distributed? 
   * By default, RabbitMQ will send each message to the next consumer, in sequence. On average every consumer will get the same number of messages. This way of distributing messages is called round-robin. 
-  * In my example, I used 2 consumers and distributed 5 messages. Consumer number 1 got messages 1, 3, and 5. Consumer number 2 got messages 2 and 4.
+  * In my example, I used 3 consumers and distributed 6 messages. Each consumer received 2 messages each.
 
 ##### Summary of Steps I Took:
 1. Ran new_task.py in Visual Studio Code
-2. Open 3 new terminal windows and run worker.Py
-4. Open a new terminal window and run new_task.py
-6. Continually tell the new_task.py to send new tasks to the workers
-7. Watch as the messages are sent to the worker terminals in sequene
+2. Open 3 new terminal windows and run worker.py. These are the 3 consumers.
+4. Open a new terminal window and run new_task.py This is the producer.
+6. Tell new_task.py to send messages 1-6 to the consumers.
+7. Watch as the messages are sent to the consumer terminals in sequene
 
 ## Reference
 
 - [RabbitMQ Tutorial - Work Queues](https://www.rabbitmq.com/tutorials/tutorial-two-python.html)
 
 
-## Screenshot
+## Screenshot of the Producer Terminal
 
-See a running example with at least 3 concurrent process windows here:
+![Producer](https://user-images.githubusercontent.com/105391626/217336006-5cd8790a-b49a-49cd-b975-7a1e6307606c.png)
+
+## Screenshot of the Consumer Terminals
+
+![Consumers](https://user-images.githubusercontent.com/105391626/217336108-a8ec5e57-eced-4f21-bc30-efc35bc64dcd.png)
