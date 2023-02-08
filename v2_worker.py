@@ -1,9 +1,9 @@
 """
-    This program listens for work messages contiously. 
+    This program listens for work messages continously. 
     Start multiple versions to add more workers.  
 
-    Author: Denise Case
-    Date: January 15, 2023
+    Author: Presley Schumacher
+    Date: February 7, 2023
 
 """
 

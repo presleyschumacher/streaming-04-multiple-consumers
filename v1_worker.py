@@ -18,6 +18,9 @@ Terminal Reminders
 
 - Use the up arrow to get the last command executed.
 
+Author: Presley Schumacher
+Date: February 7, 2023
+
 """
 
 import pika

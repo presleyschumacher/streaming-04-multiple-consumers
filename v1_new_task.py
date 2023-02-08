@@ -8,6 +8,9 @@ Approach
 ---------
 Work Queues - one task producer / many workers sharing work.
 
+Author: Presley Schumacher
+Date: February 7, 2023
+
 
 """
 

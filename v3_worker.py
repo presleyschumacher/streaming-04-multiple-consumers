@@ -2,8 +2,8 @@
     This program listens for work messages contiously. 
     Start multiple versions to add more workers.  
 
-    Author: Denise Case
-    Date: January 15, 2023
+    Author: Presley Schumacher
+    Date: February 7, 2023
 
 """
 
@@ -97,4 +97,4 @@ def main(hn: str = "localhost", qn: str = "task_queue"):
 if __name__ == "__main__":
     # call the main function with the information needed
     main("localhost", "queue_task3")
-    
+
