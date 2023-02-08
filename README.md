@@ -66,17 +66,49 @@ Which worker gets which tasks? How are tasks distributed?
 2. Open 3 new terminal windows and run worker.py. These are the 3 consumers.
 4. Open a new terminal window and run new_task.py This is the producer.
 6. Tell new_task.py to send messages 1-6 to the consumers.
-7. Watch as the messages are sent to the consumer terminals in sequene
+7. Watch as the messages are sent to the consumer terminals in sequence
+
+## Version 3: Automating the Tasks
+> Build a version 3 where the producer will read from a CSV file, "tasks.csv".
+1. Create a new .PY file in Visual Code Studio called "v3_new_task.py". This will be the producer file that reads from the CSV File.
+    1. Import the necessary modules
+    1. Define the RabbitMQ Admin website and introduce a "show_offer" variable so it only opens if the show_offer is true.
+    1. Define our send_message
+    1. Establish a connection with RabbitMQ Server
+        1. Declare a durable queue
+        1. Publish to the channel with the given exchange, routing key, and body
+        1. Print a message to the console for the user
+        1. Close the Connection to the Server
+    1. Set-up the "if __name__ == "__main__":" Python idiom
+        1. Set our show_offer variable to false so that RabbitMQ doesn't ask to open the admin site
+        1. Open the CSV File, read the file, and display the contents of the CSV file
+        1. Send the message to the queue
+        1. Set time method sleep() to suspend the execution for 5 seconds
+    
+2. Create a new .PY file in Visual Code Studio called "v3_worker.py". This will be the consumer file.
+    1. Import the necessary modules
+    1. Define the callback function to be called when a message is received, tell the user when the task is done, and acknowledge the message was received and processed
+    1. Define the main function to run the program
+    1. Set-up the "if __name__ == "__main__":" Python idiom
+        1. Call the main function with the information is needed.
+ 3. Commit changes to the repo
+ 4. Open 4 terminal windows: 1 to run the New Task script and 3 to run the Worker scripts
+    1. RabbitMQ sends the tasks from the CSV file to the next consumer in sequence
+ 5. In the Producer window, close the connection with "connection.close()"
+ 6. In the Consumer windows, close the connection with CTRL +C
+
 
 ## Reference
 
 - [RabbitMQ Tutorial - Work Queues](https://www.rabbitmq.com/tutorials/tutorial-two-python.html)
 
 
-## Screenshot of the Producer Terminal
+## Screenshot of the Version 3 Producer Terminal
 
-![Producer](https://user-images.githubusercontent.com/105391626/217336006-5cd8790a-b49a-49cd-b975-7a1e6307606c.png)
+![producer_v3](https://user-images.githubusercontent.com/105391626/217412365-8a5d9b84-58a9-478c-a071-a0eb2ef00ae2.png)
 
-## Screenshot of the Consumer Terminals
 
-![Consumers](https://user-images.githubusercontent.com/105391626/217336108-a8ec5e57-eced-4f21-bc30-efc35bc64dcd.png)
+## Screenshot of the Version 3 Consumer Terminals
+
+![Consumers_v3](https://user-images.githubusercontent.com/105391626/217412379-48b39278-f252-462f-9673-4dc0384a7f0b.png)
+
